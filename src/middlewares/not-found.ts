@@ -1,10 +1,11 @@
 import type { NotFoundHandler } from "hono";
 
-import { ReasonPhrases, StatusCodes } from "http-status-codes";
+import { StatusCodes } from "@/utils/http-status-codes.js";
+import { StatusPhrases } from "@/utils/http-status-phrases.js";
 
 const notFound: NotFoundHandler = (c) => {
   return c.json({
-    message: `${ReasonPhrases.NOT_FOUND} - ${c.req.path}`,
+    message: `${StatusPhrases.NOT_FOUND} - ${c.req.path}`,
   }, StatusCodes.NOT_FOUND);
 };
 

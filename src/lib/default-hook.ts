@@ -1,6 +1,6 @@
 import type { Hook } from "@hono/zod-openapi";
 
-import { StatusCodes } from "http-status-codes";
+import { StatusCodes } from "@/utils/http-status-codes.js";
 
 const defaultHook: Hook<any, any, any, any> = (result, c) => {
   if (!result.success) {
