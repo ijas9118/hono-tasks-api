@@ -1,4 +1,4 @@
-import { createRoute, z } from "@hono/zod-openapi";
+import { createRoute } from "@hono/zod-openapi";
 
 import { createRouter } from "@/lib/create-app.js";
 import createMessageObjectSchema from "@/utils/create-message-object.js";
