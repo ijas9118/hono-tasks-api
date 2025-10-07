@@ -7,7 +7,7 @@ import { tasks } from "@/db/schema.js";
 import { StatusCodes } from "@/utils/http-status-codes.js";
 import { StatusPhrases } from "@/utils/http-status-phrases.js";
 
-import type { CreateRoute, GetOneRoute, ListRoute, UpdateRoute } from "./tasks.routes.js";
+import type { CreateRoute, GetOneRoute, ListRoute, RemoveRoute, UpdateRoute } from "./tasks.routes.js";
 
 export const list: AppRouterHandler<ListRoute> = async (c) => {
   const tasks = await db.query.tasks.findMany();
@@ -46,4 +46,17 @@ export const update: AppRouterHandler<UpdateRoute> = async (c) => {
   }
 
   return c.json(task, StatusCodes.OK);
+};
+
+export const remove: AppRouterHandler<RemoveRoute> = async (c) => {
+  const { id } = c.req.valid("param");
+  const result = await db.delete(tasks)
+    .where(eq(tasks.id, id))
+    .returning();
+
+  if (result.length === 0) {
+    return c.json({ message: "Task not found" }, StatusCodes.NOT_FOUND);
+  }
+
+  return c.body(null, StatusCodes.NO_CONTENT);
 };
