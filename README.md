@@ -113,37 +113,38 @@ tasks-api/
 ├── .dockerignore
 ├── .env.example
 └── src/
-    ├── app.ts
-    ├── index.ts
+    ├── app.ts                        # Initializes main Hono app & configs
+    ├── index.ts                      # Server entry point  
     ├── config/
-    │   └── env.ts
+    │   └── env.ts                 
     ├── db/
-    │   ├── index.ts
-    │   └── schema.ts
+    │   ├── index.ts               
+    │   └── schema.ts              
     ├── lib/
-    │   ├── configure-open-api.ts
-    │   ├── create-app.ts
-    │   ├── default-hook.ts
-    │   └── types.ts
+    │   ├── configure-open-api.ts     # OpenAPI setup
+    │   ├── create-app.ts             # Hono app factory
+    │   ├── default-hook.ts           # Default middleware hooks
+    │   └── types.ts                  # Shared types
     ├── middlewares/
-    │   ├── not-found.ts
-    │   ├── on-error.ts
-    │   └── pino-logger.ts
+    │   ├── not-found.ts              # 404 handler
+    │   ├── on-error.ts               # Error handler
+    │   └── pino-logger.ts            # Logger middleware
     ├── routes/
-    │   ├── index.routes.ts
+    │   ├── index.routes.ts           # Root routes
     │   └── tasks/
-    │       ├── tasks.handlers.ts
-    │       ├── tasks.index.ts
-    │       └── tasks.routes.ts
+    │       ├── tasks.handlers.ts     # Task logic
+    │       ├── tasks.index.ts        # Task module export
+    │       └── tasks.routes.ts       # Task endpoints
     └── utils/
-        ├── create-error-schema.ts
-        ├── create-message-object.ts
-        ├── http-status-codes.ts
-        ├── http-status-phrases.ts
-        ├── id-params.ts
-        ├── json-content-required.ts
-        ├── json-content.ts
-        └── not-found-schema.ts
+        ├── create-error-schema.ts    # Error schema
+        ├── create-message-object.ts  # Response messages
+        ├── http-status-codes.ts      # HTTP codes
+        ├── http-status-phrases.ts    # HTTP phrases
+        ├── id-params.ts              # ID param validation
+        ├── json-content-required.ts  # JSON body check
+        ├── json-content.ts           # JSON parser
+        └── not-found-schema.ts       # 404 schema
+
 ```
 
 ---
