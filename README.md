@@ -35,7 +35,7 @@ Follow these steps to clone and run the Tasks API locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ijas9118/tasks-api.git
+git clone https://github.com/ijas9118/hono-tasks-api.git
 cd tasks-api
 ```
 
@@ -104,7 +104,7 @@ Refer to the Scalar documentation for detailed request/response formats and exam
 ## 📂 Project Structure
 
 ```
-tasks-api/
+hono-tasks-api/
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── drizzle.config.ts
