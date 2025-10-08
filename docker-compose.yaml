@@ -1,5 +1,5 @@
 services:
-  postgres-db:
+  db:
     container_name: postgres-db
     image: postgres
     restart: always
@@ -11,6 +11,21 @@ services:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  app:
+    image: hono-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+     - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
 
 volumes:
   postgres-data:
