@@ -8,6 +8,8 @@ Welcome to the **Tasks API**, a robust and lightweight RESTful API built with [H
 - This API leverages [Drizzle ORM](https://orm.drizzle.team/) for seamless database interactions with [PostgreSQL](https://www.postgresql.org/), is containerized using [Docker](https://www.docker.com/), and orchestrated with [Docker Compose](https://docs.docker.com/compose/).
 - The API is fully documented using [Scalar](https://www.scalar.com/) for an interactive and user-friendly API documentation experience.
 
+<img width="1470" height="837" alt="Scalar API Docs UI" src="https://github.com/user-attachments/assets/3581778a-0e07-4c6c-967d-4ec7dbc96886" />
+
 ## 🛠️ Tech Stack
 
 - **Framework**: Hono.js
